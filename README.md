@@ -42,15 +42,21 @@ cct → CLAUDE_TEAM_MODE=1 claude --teammate-mode tmux
 ## Prerequisites
 
 - [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed
-- tmux installed (`brew install tmux`)
-- A terminal that supports tmux (iTerm2 recommended)
+- tmux installed
+  - macOS: `brew install tmux`
+  - Ubuntu/Debian/WSL: `sudo apt install tmux`
+  - Fedora: `sudo dnf install tmux`
+  - Arch: `sudo pacman -S tmux`
+- A terminal that supports tmux
 
 ## Install
 
 ```bash
 chmod +x install.sh
 ./install.sh
-source ~/.zshrc  # or restart your shell
+# restart your shell, or:
+source ~/.bashrc   # Linux / WSL
+source ~/.zshrc    # macOS
 ```
 
 The installer is idempotent — safe to run multiple times. It merges into existing `settings.json` and `CLAUDE.md` without overwriting.
@@ -61,7 +67,7 @@ The installer is idempotent — safe to run multiple times. It merges into exist
 claude-agent-teams-kit/
 ├── install.sh                      # Idempotent installer
 ├── shell/
-│   └── aliases.zsh                 # cc / cct alias definitions
+│   └── aliases.sh                  # cc / cct alias definitions
 ├── claude/
 │   ├── settings.json               # Agent Teams feature flag + hook registration
 │   ├── CLAUDE.md                   # Agent Teams persistent instruction (appended to existing)
@@ -82,7 +88,7 @@ claude-agent-teams-kit/
 ## Uninstall
 
 ```bash
-# Remove aliases (manually delete cc/cct lines from ~/.zshrc)
+# Remove aliases (manually delete cc/cct lines from ~/.bashrc or ~/.zshrc)
 
 # Remove Claude config additions
 rm ~/.claude/hooks/team-mode-init.sh
