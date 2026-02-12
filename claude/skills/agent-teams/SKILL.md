@@ -5,6 +5,7 @@ description: >
   Use when: orchestrating multi-agent teams, deciding team vs subagent vs single session,
   spawning teammates for parallel work, multi-file refactoring, competing hypotheses,
   cross-layer coordination (frontend + backend + tests), or code review from multiple angles.
+source: https://github.com/FebruaryLi/claude-agent-teams-kit
 ---
 
 # Agent Teams Orchestration Guide
